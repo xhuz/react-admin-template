@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+.ant-drawer-content {
+  background: transparent;
+}
+
+.app-layout {
+  .header {
+    padding: 0;
+    height: $navBarHeight;
+    line-height: $navBarHeight;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+
+    &.opened {
+      width: calc(100% - 200px);
+      transition: width 0.2s;
+    }
+
+    &.collapsed {
+      width: calc(100% - 80px);
+      transition: width 0.2s;
+    }
+  }
+  .sub-menu {
+    background-color: #fff;
+  }
+}
+
+.app-main {
+  padding: 15px;
+  min-height: 100%;
+}
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+  background: $subMenuBg;
+}
+
+.ant-menu.ant-menu-sub.ant-menu-vertical {
+  background: $menuBg;
+}
+
+.ant-menu-dark .ant-menu-item:hover {
+  background: $menuHover;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: transparent;
+  color: $menuActiveText;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  background-color: $menuHover;
+}
+.ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-vertical-left .ant-menu-item:not(:last-child),
+.ant-menu-vertical-right .ant-menu-item:not(:last-child),
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+  margin: 0;
+}
+.ant-menu-vertical .ant-menu-item,
+.ant-menu-vertical-left .ant-menu-item,
+.ant-menu-vertical-right .ant-menu-item,
+.ant-menu-inline .ant-menu-item,
+.ant-menu-vertical .ant-menu-submenu-title,
+.ant-menu-vertical-left .ant-menu-submenu-title,
+.ant-menu-vertical-right .ant-menu-submenu-title,
+.ant-menu-inline .ant-menu-submenu-title {
+  margin: 0;
+}
+
+.ant-menu-vertical > .ant-menu-item,
+.ant-menu-vertical-left > .ant-menu-item,
+.ant-menu-vertical-right > .ant-menu-item,
+.ant-menu-inline > .ant-menu-item,
+.ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title,
+.ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title,
+.ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title,
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+  height: 50px;
+  line-height: 50px;
+}
+
+.ant-breadcrumb-link,
+.ant-breadcrumb-separator {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+}
