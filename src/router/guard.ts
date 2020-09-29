@@ -33,7 +33,7 @@ export const guard: GuardFunction = async (to, _from, next) => {
         } catch (error) {
           store.dispatch(resetState());
           message.destroy();
-          message.error(error || 'Has Error');
+          await message.error(error || 'Has Error');
           next.redirect(`/login?redirect=${to.location.pathname}`);
           NProgress.done();
         }

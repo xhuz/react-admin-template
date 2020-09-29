@@ -2,7 +2,7 @@ import {Button, Result} from 'antd';
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 
-export default function() {
+export default function Error404() {
   const history = useHistory();
   return (
     <Result

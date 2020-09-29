@@ -35,7 +35,7 @@ export function BaseLayout({children}: BaseLayoutProps) {
         changeInit(false);
       }
     }
-  }, [isInit]);
+  }, [dispatch, isInit]);
 
   useEffect(() => {
     window.addEventListener('resize', resizeHandle);

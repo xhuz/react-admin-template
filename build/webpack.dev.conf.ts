@@ -1,3 +1,4 @@
+import * as AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import {readdirSync} from 'fs';
 import {extname, resolve} from 'path';
@@ -76,13 +77,11 @@ const devConfig: webpack.Configuration = {
     ]
   },
   plugins: [
-    // ...getManifest().map(item => new webpack.DllReferencePlugin(item)),
-    // ...getDll().map(item => new AddAssetHtmlPlugin(item)),
+    ...getManifest().map(item => new webpack.DllReferencePlugin(item)),
+    ...getDll().map(item => new AddAssetHtmlPlugin(item)),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [
-          'Your application is running here: http://localhost:4000/admin/'
-        ]
+        messages: ['Your application is running here: http://localhost:4000']
       } as any
     }),
     new webpack.HotModuleReplacementPlugin()

@@ -8,9 +8,9 @@ export interface RouteConfig {
     | React.ComponentType<any>;
   hidden?: boolean;
   meta?: {
+    [key: string]: any;
     title: string;
     icon?: string;
-    [key: string]: any;
   };
   children?: RouteConfig[];
 }

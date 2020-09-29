@@ -15,7 +15,13 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "/",
+    "paths": {
+      "axios": [
+        "src/utils/request"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",

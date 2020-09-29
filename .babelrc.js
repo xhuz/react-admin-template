@@ -5,7 +5,7 @@ module.exports = {
     '@babel/proposal-object-rest-spread',
     [
       'styled-jsx/babel',
-      {sourceMaps: false, plugins: ['styled-jsx-plugin-sass']}
+      {sourceMaps: false, plugins: ['styled-jsx-plugin-scss']}
     ]
   ]
 };

@@ -1,8 +1,7 @@
 import {EffectAction} from '../..';
-import {login, logout, UserLogin, userInfo} from '../../../api/user';
-import {resetState, setAvatar, setId, setName, setToken} from './action';
+import {login, logout, userInfo, UserLogin} from '../../../api/user';
 import * as localToken from '../../../utils/token';
-import {push} from 'connected-react-router';
+import {resetState, setAvatar, setId, setName, setToken} from './action';
 
 export const loginEffect = (
   data: UserLogin

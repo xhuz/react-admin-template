@@ -43,7 +43,7 @@ export class LocalStorage {
 
   public setItemByMap(data: {[key: string]: any}) {
     for (const [key, value] of Object.entries(data)) {
-      storage.setItem(key, value);
+      this.localStorage.setItem(key, value);
     }
   }
 

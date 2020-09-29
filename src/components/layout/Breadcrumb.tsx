@@ -37,7 +37,7 @@ export function Breadcrumb() {
     }
 
     setMatch([...parent]);
-  }, [location]);
+  }, [location, menuList]);
   return (
     <AntdBreadcrumb
       style={{

@@ -1,13 +1,13 @@
+import {Button, Form, Input} from 'antd';
 import React from 'react';
-import {Form, Input, Button} from 'antd';
-import {SvgIcon} from '../../components/svg-icon/SvgIcon';
-import './login.scss';
-import {loginEffect} from '../../store/modules/user/thunk';
 import {useHistory} from 'react-router-dom';
-import {getQueryString} from '../../utils/get-query-string';
+import {SvgIcon} from '../../components/svg-icon/SvgIcon';
 import {useEffectDispatch} from '../../hooks';
+import {loginEffect} from '../../store/modules/user/thunk';
+import {getQueryString} from '../../utils/get-query-string';
+import './login.scss';
 
-export default function() {
+export default function Login() {
   const effectDispatch = useEffectDispatch();
   const history = useHistory();
   const defaultUser = {username: 'admin', password: '123456'};

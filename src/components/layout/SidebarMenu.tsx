@@ -22,10 +22,6 @@ export const SidebarMenu = () => {
 
   const [keys, setKeys] = useState<any[]>([]);
 
-  const computeOpenKeys = (path: string) => {
-    return findParentKey(showMenuList, path);
-  };
-
   // useEffect(() => {
   //   const openKeys = computeOpenKeys(activeMenu[0]);
   //   setKeys([...openKeys]);
@@ -33,6 +29,9 @@ export const SidebarMenu = () => {
 
   // 路由,开启状态,和设备变化重新计算sub menu open key
   useEffect(() => {
+    const computeOpenKeys = (path: string) => {
+      return findParentKey(showMenuList, path);
+    };
     // 关闭状态清空open key把控制权交会给Menu组件本身
     if (!opened) {
       setKeys([]);
@@ -40,12 +39,12 @@ export const SidebarMenu = () => {
       const openKeys = computeOpenKeys(routePath);
       setKeys([...openKeys]);
     }
-  }, [opened, device, router]);
+  }, [opened, device, routePath, showMenuList]);
 
   // 路由变化重新计算当前激活的菜单
   useEffect(() => {
     setActiveMenu([routePath]);
-  }, [router]);
+  }, [routePath]);
 
   const menuChangeHandle = (openKeys: string[]) => {
     setKeys(openKeys);
@@ -65,6 +64,7 @@ export const SidebarMenu = () => {
       inlineIndent={10}
       openKeys={keys}
       selectedKeys={activeMenu}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       onOpenChange={menuChangeHandle}
       onClick={menuClickHandle}

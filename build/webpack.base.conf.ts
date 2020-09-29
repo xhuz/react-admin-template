@@ -3,17 +3,17 @@ import {resolve} from 'path';
 import * as webpack from 'webpack';
 
 const config: webpack.Configuration = {
-  entry: resolve(__dirname, '../main.tsx'),
+  entry: resolve(__dirname, '../src/main.tsx'),
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
-  stats: 'errors-warnings',
+  // stats: 'errors-warnings',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         exclude: /(node_modules|build)/,
-        include: [resolve(__dirname, '../')],
+        include: [resolve(__dirname, '../src')],
         use: ['thread-loader', 'cache-loader', 'babel-loader']
       },
       {
@@ -27,8 +27,8 @@ const config: webpack.Configuration = {
             }
           }
         ],
-        include: [resolve(__dirname, '../')],
-        exclude: [resolve(__dirname, '../icons/svg')]
+        include: [resolve(__dirname, '../src')],
+        exclude: [resolve(__dirname, '../src/icons/svg')]
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/,
@@ -41,7 +41,7 @@ const config: webpack.Configuration = {
             }
           }
         ],
-        include: [resolve(__dirname, '../')]
+        include: [resolve(__dirname, '../src')]
       },
       {
         test: /\.svg$/,
@@ -56,17 +56,17 @@ const config: webpack.Configuration = {
           {
             loader: 'svgo-loader',
             options: {
-              externalConfig: resolve(__dirname, '../icons/svgo.yml')
+              externalConfig: resolve(__dirname, '../src/icons/svgo.yml')
             }
           }
         ],
-        include: [resolve(__dirname, '../icons/svg')]
+        include: [resolve(__dirname, '../src/icons/svg')]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../index.html'),
+      template: resolve(__dirname, '../src/index.html'),
       minify: false
     }),
     new webpack.ProgressPlugin()

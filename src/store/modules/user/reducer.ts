@@ -1,4 +1,3 @@
-import {remove} from 'nprogress';
 import {getToken, removeToken} from '../../../utils/token';
 import {ActionType, UserAction, UserState} from './interface';
 
