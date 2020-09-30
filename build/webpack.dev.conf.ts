@@ -26,7 +26,7 @@ const getManifest = () => {
 
 const devConfig: webpack.Configuration = {
   output: {
-    path: resolve(__dirname, '../../../dist/admin'),
+    path: resolve(__dirname, '../dist'),
     filename: 'js/[name].bundle.js',
     publicPath: PUBLIC_PATH
   },

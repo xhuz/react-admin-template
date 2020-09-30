@@ -7,7 +7,7 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
-  // stats: 'errors-warnings',
+  stats: 'errors-warnings',
   module: {
     rules: [
       {

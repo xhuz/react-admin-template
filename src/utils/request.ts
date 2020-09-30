@@ -23,21 +23,22 @@ service.interceptors.request.use(
 );
 
 service.interceptors.response.use(
-  async response => {
+  response => {
     const res = response.data;
 
     if (res.statusCode === 200 || res.statusCode === 201) {
       return response;
     } else {
-      await message.error(res.message || 'Error', 5);
+      message
+        .error(res.message || 'Error', 5)
+        .promise.catch(err => console.log(err));
       return Promise.reject(new Error(res.message || 'Error'));
     }
   },
-  async error => {
-    await message.error(
-      error.response?.data?.message || error.message || 'Error',
-      5
-    );
+  error => {
+    message
+      .error(error.response?.data?.message || error.message || 'Error', 5)
+      .promise.catch(err => console.log(err));
     return Promise.reject(error);
   }
 );

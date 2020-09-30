@@ -3,8 +3,8 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import {GuardFunction} from 'react-router-guards';
 import {store} from '../store';
+import {getUserInfoEffect} from '../store/modules/user';
 import {resetState} from '../store/modules/user/action';
-import {getUserInfoEffect} from '../store/modules/user/thunk';
 import getPageTitle from '../utils/get-page-title';
 import {getToken} from '../utils/token';
 
@@ -33,7 +33,9 @@ export const guard: GuardFunction = async (to, _from, next) => {
         } catch (error) {
           store.dispatch(resetState());
           message.destroy();
-          await message.error(error || 'Has Error');
+          message
+            .error(error || 'Has Error')
+            .promise.catch(err => console.log(err));
           next.redirect(`/login?redirect=${to.location.pathname}`);
           NProgress.done();
         }

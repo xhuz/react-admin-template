@@ -3,6 +3,7 @@ import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import {resolve} from 'path';
 import * as webpack from 'webpack';
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import merge from 'webpack-merge';
 import {PUBLIC_PATH} from './constants';
 import config from './webpack.base.conf';
@@ -10,11 +11,11 @@ import config from './webpack.base.conf';
 const prodConfig: webpack.Configuration = {
   mode: 'production',
   output: {
-    path: resolve(__dirname, '../../../dist/admin'),
-    filename: 'js/[name].[hash:6].bundle.js',
+    path: resolve(__dirname, '../dist'),
+    filename: 'js/[name].[chunkhash:8].bundle.js',
     publicPath: PUBLIC_PATH
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -54,12 +55,16 @@ const prodConfig: webpack.Configuration = {
     ]
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: {source: false}
+    }),
     new OptimizeCssAssetsPlugin(),
-    // new BundleAnalyzerPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash:6].css',
-      chunkFilename: 'css/[id].[hash:6].css'
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[id].[contenthash:8].css'
     })
   ],
   optimization: {
@@ -70,7 +75,7 @@ const prodConfig: webpack.Configuration = {
           chunks: 'initial',
           test: /node_modules/,
           name: 'vendor',
-          minSize: 100,
+          minSize: 100 * 1024,
           maxSize: 300 * 1024,
           priority: 10
         },
