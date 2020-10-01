@@ -1,5 +1,5 @@
 import {getToken, removeToken} from '../../../utils/token';
-import {ActionType, UserAction, UserState} from './interface';
+import {UserAction, UserActionType, UserState} from './interface';
 
 const getDefaultUserState = (): UserState => ({
   token: getToken(),
@@ -13,17 +13,17 @@ export const userReducer = (
   action: UserAction
 ) => {
   switch (action.type) {
-    case ActionType.RESET_STATE: {
+    case UserActionType.RESET_STATE: {
       removeToken();
       return getDefaultUserState();
     }
-    case ActionType.SET_NAME:
+    case UserActionType.SET_NAME:
       return {...state, ...action.payload};
-    case ActionType.SET_AVATAR:
+    case UserActionType.SET_AVATAR:
       return {...state, ...action.payload};
-    case ActionType.SET_TOKEN:
+    case UserActionType.SET_TOKEN:
       return {...state, ...action.payload};
-    case ActionType.SET_ID:
+    case UserActionType.SET_ID:
       return {...state, ...action.payload};
     default: {
       const _: never = action;

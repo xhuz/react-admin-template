@@ -1,17 +1,17 @@
 import {
-  ActionType,
+  AppActionType,
   CloseSidebarAction,
   ToggleDeviceAction,
   ToggleSidebarAction
 } from './interface';
 
 export const toggleSidebar = (): ToggleSidebarAction => ({
-  type: ActionType.TOGGLE_SIDEBAR
+  type: AppActionType.TOGGLE_SIDEBAR
 });
 export const closeSidebar = (): CloseSidebarAction => ({
-  type: ActionType.CLOSE_SIDEBAR
+  type: AppActionType.CLOSE_SIDEBAR
 });
 export const toggleDevice = (payload: string): ToggleDeviceAction => ({
-  type: ActionType.TOGGLE_DEVICE,
+  type: AppActionType.TOGGLE_DEVICE,
   payload
 });

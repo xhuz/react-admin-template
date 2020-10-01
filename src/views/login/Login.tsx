@@ -3,7 +3,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {SvgIcon} from '../../components/svg-icon/SvgIcon';
 import {useEffectDispatch} from '../../hooks';
-import {loginEffect} from '../../store/modules/user/thunk';
+import {loginEffect} from '../../store';
 import {getQueryString} from '../../utils/get-query-string';
 import './login.scss';
 

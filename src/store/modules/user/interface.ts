@@ -5,7 +5,7 @@ export interface UserState {
   avatar: string;
 }
 
-export enum ActionType {
+export enum UserActionType {
   RESET_STATE = '[user] reset state',
   SET_TOKEN = '[user] set token',
   SET_NAME = '[user] set name',
@@ -14,25 +14,25 @@ export enum ActionType {
 }
 
 export interface RestStateAction {
-  type: ActionType.RESET_STATE;
+  type: UserActionType.RESET_STATE;
 }
 export interface SetTokenAction {
-  type: ActionType.SET_TOKEN;
+  type: UserActionType.SET_TOKEN;
   payload: {token: string};
 }
 
 export interface setNameAction {
-  type: ActionType.SET_NAME;
+  type: UserActionType.SET_NAME;
   payload: {name: string};
 }
 
 export interface SetAvatarAction {
-  type: ActionType.SET_AVATAR;
+  type: UserActionType.SET_AVATAR;
   payload: {avatar: string};
 }
 
 export interface SetIdAction {
-  type: ActionType.SET_ID;
+  type: UserActionType.SET_ID;
   payload: {id: number};
 }
 

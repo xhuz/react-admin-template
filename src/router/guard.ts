@@ -2,9 +2,7 @@ import {message} from 'antd';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import {GuardFunction} from 'react-router-guards';
-import {store} from '../store';
-import {getUserInfoEffect} from '../store/modules/user';
-import {resetState} from '../store/modules/user/action';
+import {getUserInfoEffect, resetState, store} from '../store';
 import getPageTitle from '../utils/get-page-title';
 import {getToken} from '../utils/token';
 

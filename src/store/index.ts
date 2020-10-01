@@ -5,6 +5,7 @@ import {AppState} from './modules/app';
 import {UserState} from './modules/user';
 
 export * from './modules/app';
+export * from './modules/user';
 export * from './store';
 
 export type GeneralEffectAction<R, A extends string> = ThunkAction<

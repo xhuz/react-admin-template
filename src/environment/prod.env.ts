@@ -1,1 +1,1 @@
-export const REACT_BASE_URL = 'http://localhost:9000/adjust/callback/api';
+export const REACT_BASE_URL = 'http://localhost:9000';

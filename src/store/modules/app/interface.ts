@@ -8,22 +8,22 @@ export interface AppState {
   menuList: RouteConfig[];
   showMenuList: RouteConfig[];
 }
-export enum ActionType {
+export enum AppActionType {
   TOGGLE_SIDEBAR = '[app] toggle sidebar',
   CLOSE_SIDEBAR = '[app] close sidebar',
   TOGGLE_DEVICE = '[app] toggle device'
 }
 
 export interface ToggleSidebarAction {
-  type: ActionType.TOGGLE_SIDEBAR;
+  type: AppActionType.TOGGLE_SIDEBAR;
 }
 
 export interface CloseSidebarAction {
-  type: ActionType.CLOSE_SIDEBAR;
+  type: AppActionType.CLOSE_SIDEBAR;
 }
 
 export interface ToggleDeviceAction {
-  type: ActionType.TOGGLE_DEVICE;
+  type: AppActionType.TOGGLE_DEVICE;
   payload: string;
 }
 

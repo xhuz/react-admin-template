@@ -1,37 +1,37 @@
 import {
-  ActionType,
   RestStateAction,
   SetAvatarAction,
   SetIdAction,
   setNameAction,
   SetTokenAction,
+  UserActionType,
   UserState
 } from './interface';
 
 export const resetState = (): RestStateAction => ({
-  type: ActionType.RESET_STATE
+  type: UserActionType.RESET_STATE
 });
 
 export const setToken = (
   payload: Pick<UserState, 'token'>
 ): SetTokenAction => ({
-  type: ActionType.SET_TOKEN,
+  type: UserActionType.SET_TOKEN,
   payload
 });
 
 export const setName = (payload: Pick<UserState, 'name'>): setNameAction => ({
-  type: ActionType.SET_NAME,
+  type: UserActionType.SET_NAME,
   payload
 });
 
 export const setAvatar = (
   payload: Pick<UserState, 'avatar'>
 ): SetAvatarAction => ({
-  type: ActionType.SET_AVATAR,
+  type: UserActionType.SET_AVATAR,
   payload
 });
 
 export const setId = (payload: Pick<UserState, 'id'>): SetIdAction => ({
-  type: ActionType.SET_ID,
+  type: UserActionType.SET_ID,
   payload
 });
