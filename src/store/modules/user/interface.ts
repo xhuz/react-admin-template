@@ -21,7 +21,7 @@ export interface SetTokenAction {
   payload: {token: string};
 }
 
-export interface setNameAction {
+export interface SetNameAction {
   type: UserActionType.SET_NAME;
   payload: {name: string};
 }
@@ -39,6 +39,6 @@ export interface SetIdAction {
 export type UserAction =
   | RestStateAction
   | SetTokenAction
-  | setNameAction
+  | SetNameAction
   | SetAvatarAction
   | SetIdAction;

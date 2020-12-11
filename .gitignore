@@ -6,3 +6,6 @@ dll
 
 # bundle
 dist
+
+# IDE
+.idea

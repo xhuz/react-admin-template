@@ -2,7 +2,7 @@ import {
   RestStateAction,
   SetAvatarAction,
   SetIdAction,
-  setNameAction,
+  SetNameAction,
   SetTokenAction,
   UserActionType,
   UserState
@@ -19,7 +19,7 @@ export const setToken = (
   payload
 });
 
-export const setName = (payload: Pick<UserState, 'name'>): setNameAction => ({
+export const setName = (payload: Pick<UserState, 'name'>): SetNameAction => ({
   type: UserActionType.SET_NAME,
   payload
 });
